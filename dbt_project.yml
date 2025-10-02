@@ -38,8 +38,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   portfolio_tacking:
     # Applies to all files under models/example/
-    example:
-      +materialized: view
-      refined:   # Applies to all files under models/refined/
-        +materialized: table
-        +schema: refined
+    +materialized: view
+    refined:   # Applies to all files under models/refined/
+      +materialized: table
+      +schema: refined
