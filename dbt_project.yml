@@ -41,4 +41,4 @@ models:
     +materialized: view
     refined:   # Applies to all files under models/refined/
       +materialized: table
-      +schema: refined
+      +schema: REFINED
