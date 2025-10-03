@@ -8,7 +8,54 @@ sources:
     schema: SOURCE_DATA
 
     tables:
-      - name: ABC_BANK_POSITION
+      - name: ABC_BANK_POSITION 
+        description: >
+            The landing table holding the data imported
+            from teh CSV extracted by ABC Bank
+        columns: 
+          - name: ACCOUNTID
+            description: The code for the account at ABC Bank 
+            tests: 
+              - not_null
+          - name: DESCRIPTION
+            description: The bname of the security at ABC Bank
+            tests: 
+              - not_null
+          - name: EXCHANGE
+            description: >
+                 The short name or code of the exchange where the 
+                 security is traded 
+            tests: 
+              - not_null
+          - name: REPORT_DATE
+            description: > 
+                 The date of the report was extracted by ABC Bank 
+                 We consider this position to be effective from this day forward, until 
+                 a change is seeen 
+            tests: 
+              - not_null
+          - name: QUANTITY 
+            description: >
+                 The number of securities we hold in the 
+                 portfolio at ABC Bank at the Report Date 
+            tests:
+              - not_null
+          - name: COST_BASE
+            description: Cost base 
+            tests: 
+              - not_null
+          - name: POSITION_VALUE
+            description: position value 
+            tests: 
+              - not_null
+          - name: CURRENCY
+            description: currency 
+            tests: 
+              - not_null 
+              - accepted_values:
+                   values: [ 'CAD', 'USD']
+
+
 
 
 
